@@ -2,7 +2,6 @@ package com.velocity.payment.service;
 
 import java.time.LocalDateTime;
 import java.util.Random;
-import java.util.random.RandomGenerator;
 
 import org.springframework.stereotype.Service;
 
@@ -26,7 +25,7 @@ public class PaymentServiceImpl implements PaymentService {
 		transactionDetails.setAmount(paymentRequest.getTotalAmount());
 		transactionDetails.setPaymentMode(paymentRequest.getPaymentMode().name());
 		transactionDetails.setPaymentStatus("SUCCESS");
-		transactionDetails.setReferenceNumber(Random.from(RandomGenerator.getDefault()).toString());
+		transactionDetails.setReferenceNumber(""+ (new Random()).nextLong());
 		transactionDetails.setDate(LocalDateTime.now());
 
 		TransactionDetails savedData = repository.save(transactionDetails);
