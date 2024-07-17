@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registered Services</title>
+</head>
+<body>
+    <h1>Registered Services</h1>
+	    <ul>
+	        <li th:each="url : ${services}">
+	            <a th:href="@{${url}}" th:text="${url}"></a>
+	        </li>
+	    </ul>
+</body>
+</html>
