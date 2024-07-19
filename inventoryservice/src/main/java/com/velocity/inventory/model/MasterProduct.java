@@ -25,7 +25,7 @@ public class MasterProduct {
 	private String description;
 	private BigDecimal productPrice;
 	private Integer quantity;
-
+    
 	public Long getId() {
 		return id;
 	}
