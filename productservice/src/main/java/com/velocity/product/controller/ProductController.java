@@ -48,7 +48,7 @@ public class ProductController {
 		}
 	}
 
-	@PostMapping
+	@PostMapping("/addProduct")
 	public ResponseEntity<Product> addProduct(@RequestBody Product product) {
 		LOG.info("Adding new product");
 		Product newProduct = productService.addProduct(product);
