@@ -6,23 +6,23 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.velocity.payment.model.PaymentRequest;
 import com.velocity.payment.service.PaymentService;
 
 @RestController
 @RequestMapping("/api/payments")
 public class PaymentController {
-	
-	private final PaymentService paymentService;
-	
-	public PaymentController(PaymentService paymentService) {
-		this.paymentService = paymentService;
-	}
-	
-	@PostMapping
-	public ResponseEntity<Long> doPayment(@RequestBody PaymentRequest paymentRequest){
-		return new ResponseEntity<Long>(paymentService.doPayment(paymentRequest),HttpStatus.OK);
-	}
 
+    private final PaymentService paymentService;
+
+    public PaymentController(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+
+    @PostMapping
+    public ResponseEntity<Long> doPayment(@RequestBody PaymentRequest paymentRequest) {
+        return new ResponseEntity<>(paymentService.doPayment(paymentRequest), HttpStatus.OK);
+    }
 }
+
+

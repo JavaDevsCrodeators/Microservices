@@ -8,13 +8,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.envers.AuditTable;
 import org.hibernate.envers.Audited;
 
 @Entity
-@Audited
 @Table(name = "product")
-@AuditTable(value = "product_audit")
 public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,5 +65,10 @@ public class Product {
 	public String toString() {
 		return "Product [id=" + id + ", productName=" + productName + ", description=" + description + ", productPrice="
 				+ productPrice + ", quantity=" + quantity + "]";
+	}
+
+	public void setProductPrice(double d) {
+		// TODO Auto-generated method stub
+		
 	}
 }

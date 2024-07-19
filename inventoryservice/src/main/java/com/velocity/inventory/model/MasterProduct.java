@@ -26,10 +26,6 @@ public class MasterProduct {
 	private BigDecimal productPrice;
 	private Integer quantity;
 
-	@ManyToOne
-	@JoinColumn(name = "rev", referencedColumnName = "id")
-	private RevInfo revinfo;
-
 	public Long getId() {
 		return id;
 	}
