@@ -1,7 +1,6 @@
 To run the project
 Steps:
-1.Start the zipkin server
-java -jar zipkin-server-2.2.3.jar 
+1.Start the zipkin serverjava -jar zipkin-server-2.2.3.jar 
 2.Start eureka service
 3.Up the other services
 
