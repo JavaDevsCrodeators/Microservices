@@ -6,11 +6,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.envers.Audited;
 
 @Entity
 @Table(name = "master_product")
+@Audited
 public class MasterProduct {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -19,7 +25,7 @@ public class MasterProduct {
 	private String description;
 	private BigDecimal productPrice;
 	private Integer quantity;
-
+    
 	public Long getId() {
 		return id;
 	}
